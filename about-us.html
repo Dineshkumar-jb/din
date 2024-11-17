@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About-us</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="stylesheet" href="fonts/stylesheet.css" media="screen" />
+    <link rel="stylesheet" href="css/style.css" media="screen" />
+    <style>
+        /* Optional: Add some styling for the hidden content */
+        .extra-content {
+            display: block;  /* This is needed for visibility toggle */
+            opacity: 0; /* Hidden by default */
+            visibility: hidden; /* Ensures the element doesn't take space */
+            margin-top: 20px;
+            transition: opacity 0.3s ease, visibility 0s ease 0.3s; /* Smooth transition */
+        }
+
+        .extra-content.visible {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="home">
+        <div class="container">
+            <nav class="header-navigation" aria-label="navigation">
+                <div class="logo"><span class="yellow">Seven</span>Fitness</div>
+                <img src="img/nav-icon.svg" alt="navigation icon" class="nav-icon" width="30" height="30" />
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about-us.html">About</a></li>
+                    <li><a href="./index.html#footer">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section-about" id="about" style="height: 100vh;">
+        <div class="about-box container" style="margin-top: 60px;">
+            <div class="about-box__content" data-aos="fade-up">
+                <h2 class="heading heading--2">
+                    About <span class="yellow">Seven-</span>Fitness
+                </h2>
+                <p>
+                    This Gym Is Started by Seven Friends: Dinesh, Gowtham, Fedrick, Rohit, Bharath, Sanjay, and Aakash. Inspired by the Series "THE BOYS."
+                </p>
+                <a href="#" class="link-button" id="read-more-btn">Read More &rarr;</a>
+                
+                <!-- Hidden content that will be shown when 'Read More' is clicked -->
+                <div id="extra-content" class="extra-content">
+                    <p>
+                      The Boys is an American satirical superhero television series developed by Eric Kripke for Amazon Prime Video. Based on the comic book of the same name by Garth Ennis and Darick Robertson, it follows the eponymous team of vigilantes as they combat superpowered individuals (referred to as "Supes") who abuse their powers for personal gain and work for a powerful company (Vought International) that ensures the general public views them as heroes. The series features an ensemble cast that includes Karl Urban, Jack Quaid, Antony Starr, Erin Moriarty, Dominique McElligott, Jessie T. Usher, Chace Crawford, Laz Alonso, Tomer Capone, Karen Fukuhara, Nathan Mitchell, Elisabeth Shue, Colby Minifie, Aya Cash, Claudia Doumit, Jensen Ackles, Cameron Crovetti, Susan Heyward, Valorie Curry, and Jeffrey Dean Morgan.
+                    </p>
+                </div>
+            </div>
+            <figure class="about-box__image" data-aos="fade-up">
+                <img src="img/about-img-1.jpg" alt="about-image-one" width="350" height="233" />
+                <img src="img/about-img-2.jpg" alt="about-image-two" width="350" height="233" />
+                <img src="img/about-img-3.jpg" alt="about-image-three" width="420" height="280" />
+            </figure>
+        </div>
+    </section>
+
+    <script>
+        // JavaScript to toggle the "Read More" content
+        document.getElementById('read-more-btn').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the default link action
+            
+            // Toggle the visibility of the extra content
+            var extraContent = document.getElementById('extra-content');
+            if (extraContent.classList.contains('visible')) {
+                // If it's already visible, hide it
+                extraContent.classList.remove('visible');
+                this.innerHTML = "Read More &rarr;"; // Change the button text back
+            } else {
+                // If it's hidden, show it
+                extraContent.classList.add('visible');
+                this.innerHTML = "Read Less &larr;"; // Change the button text to "Read Less"
+            }
+        });
+    </script>
+
+    <script src="./index.js"></script>
+</body>
+</html>

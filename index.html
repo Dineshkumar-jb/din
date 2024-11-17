@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="MFitness reponsive webite build using HTML5, CSS3 and Javascript The complete layout of the page is build using grid layout and flexbox with some cool animations."
+    />
+    <title>SevenFitness - place for your fitness goals</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="stylesheet" href="fonts/stylesheet.css" media="screen" />
+    <link rel="stylesheet" href="css/style.css" media="screen" />
+       <!-- Firebase SDKs -->
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js"></script>
+  </head>
+  <body>
+
+    <!-- HEADER -->
+    <header class="header" id="home">
+      <div class="container">
+        <nav class="header-navigation" aria-label="navigation">
+          <div class="logo"><span class="yellow">Seven</span>Fitness</div>
+
+          <img
+            src="img/nav-icon.svg"
+            alt="navigation icon"
+            class="nav-icon"
+            width="30"
+            height="30"
+          />
+
+          <ul>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="./about-us.html">About</a>
+            </li>
+
+            <li>
+              <a href="#footer">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO SECTION -->
+      <section class="section-hero">
+        <div class="container hero-box">
+          <div class="hero-content margin-bottom">
+            <h1 class="heading heading--1 margin-bottom">
+              A place for your fitness goals
+            </h1>
+            <p class="description">
+              We Offer Functional Training, Plyometric Boxes, Aerobics classes,
+              TRX And Much More
+            </p>
+          </div>
+          <div class="btn-group">
+            <a href="./join-us.html" style="text-decoration:none ;color: black;">
+
+            <button class="btn btn__primary margin-right margin-bottom">
+              Join us
+            </button>
+          </a>
+
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- SECTION COURSES -->
+      <section class="section-courses" id="courses">
+        <div class="container courses-box" data-aos="fade-up">
+          <header class="courses-heading">
+            <h2 class="heading heading--2 underline">Our Courses</h2>
+            <p>
+              
+            </p>
+          </header>
+
+          <article class="courses-content">
+            <div class="class-card">
+              <img
+                class="class-card__img"
+                src="./img/courses-bodybuilding.jpg"
+                alt="body building course"
+                width="550"
+                height="550"
+              />
+<!-- 
+              <div class="class-card__overlay">
+                <div class="text">
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Ratione culpa
+                  </p>
+
+                  <a href="#" class="link-button">Read More &rarr;</a>
+                </div>
+              </div> -->
+
+              <div class="class-card__title">Body Building</div>
+            </div>
+
+            <div class="class-card">
+              <img
+                class="class-card__img"
+                src="./img/courses-crossfit.jpg"
+                alt="cross fit course"
+                width="550"
+                height="550"
+              />
+              <!-- <div class="class-card__overlay">
+                <div class="text">
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Ratione culpa
+                  </p>
+
+                  <a href="#" class="link-button">Read More &rarr;</a>
+                </div>
+              </div> -->
+              <div class="class-card__title">Cross Fit</div>
+            </div>
+
+            <div class="class-card">
+              <img
+                class="class-card__img"
+                src="./img/courses-gymnastic.jpg"
+                alt="gymnastic course"
+                width="550"
+                height="550"
+              />
+
+              <!-- <div class="class-card__overlay">
+                <div class="text">
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Ratione culpa
+                  </p>
+
+                  <a href="#" class="link-button">Read More &rarr;</a>
+                </div>
+              </div> -->
+
+              <div class="class-card__title">Gymnastic</div>
+            </div>
+
+            <div class="class-card">
+              <img
+                class="class-card__img"
+                src="./img/courses-fitness.jpg"
+                alt="fitness course"
+                width="550"
+                height="550"
+              />
+              <!-- <div class="class-card__overlay">
+                <div class="text">
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Ratione culpa
+                  </p>
+
+                  <a href="#" class="link-button">Read More &rarr;</a>
+                </div>
+              </div> -->
+              <div class="class-card__title">Fitness</div>
+            </div>
+
+            <div class="class-card">
+              <img
+                class="class-card__img"
+                src="./img/courses-TRX.jpg"
+                alt="fitness course"
+                width="550"
+                height="550"
+              />
+              <!-- <div class="class-card__overlay">
+                <div class="text">
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Ratione culpa
+                  </p>
+
+                  <a href="#" class="link-button">Read More &rarr;</a>
+                </div>
+              </div> -->
+              <div class="class-card__title">TRX</div>
+            </div>
+
+            <div class="class-card">
+              <img
+                class="class-card__img"
+                src="./img/courses-boxing.jpg"
+                alt="fitness course"
+                width="550"
+                height="550"
+              />
+              <!-- <div class="class-card__overlay">
+                <div class="text">
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Ratione culpa
+                  </p>
+
+                  <a href="#" class="link-button">Read More &rarr;</a>
+                </div>
+              </div> -->
+              <div class="class-card__title">Boxing</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION OFFER -->
+      <section class="section-offer" id="offer">
+        <div class="offer-box">
+          <div class="offer" data-aos="fade-up">
+            <h2 class="heading heading--2 margin-bottom">
+              Special offer this summer get full Benefits for year with 20%
+              discount.
+            </h2>
+            <p class="margin-bottom">
+              Use CODE : "Homelander" For Extra 10% Offer
+            </p>
+           <a href="./price.html"> <button class="btn btn__primary">offer details</button></a>
+          </div>
+
+          <div class="offer-img"></div>
+        </div>
+      </section>
+
+      <!-- SECTION COACHES -->
+      <section class="section-coaches" id="trainers">
+        <div class="container coaches-box" data-aos="fade-up">
+          <header class="coache-heading">
+            <h2 class="heading heading--2 underline margin-bottom">
+              OUR FITNESS COACHES
+            </h2>
+            <p>
+              x
+            </p>
+          </header>
+
+          <article class="coache-content">
+            <div class="c-card">
+              <img
+                src="https://i.pinimg.com/736x/6b/7a/bd/6b7abd8b311cfce7a6cdbb389b690627.jpg"
+                alt="coache one"
+                class="c-card__img"
+
+              />
+
+              <!-- <div class="overlay">
+                <img
+                  src="./img/logo-whatsapp.svg"
+                  alt="whatsapp-icon"
+                  width="30"
+                  height="30"
+                />
+
+                <img
+                  src="./img/logo-facebook.svg"
+                  alt="facebook-icon"
+                  width="30"
+                  height="30"
+                />
+
+                <img
+                  src="./img/logo-instagram.svg"
+                  alt="instagram-icon"
+                  width="30"
+                  height="30"
+                />
+
+                <img
+                  src="./img/logo-twitter.svg"
+                  alt="twitter-icon"
+                  width="30"
+                  height="30"
+                />
+              </div> -->
+
+              <div class="c-card__content">
+                <p class="c-name">Chris Bumstead</p>
+                <p class="c-title">Body Building</p>
+              </div>
+            </div>
+
+            <div class="c-card">
+              <img
+                src="https://i.pinimg.com/736x/2c/19/d8/2c19d88fc45eb746982251461807ebbd.jpg"
+                alt="coache one"
+                class="c-card__img"
+                width="550"
+                height="550"
+              />
+
+              <!-- <div class="overlay">
+                <img
+                  src="./img/logo-whatsapp.svg"
+                  alt="whatsapp-icon"
+                  width="30"
+                  height="30"
+                />
+
+                <img
+                  src="./img/logo-facebook.svg"
+                  alt="facebook-icon"
+                  width="30"
+                  height="30"
+                />
+
+                <img
+                  src="./img/logo-instagram.svg"
+                  alt="instagram-icon"
+                  width="30"
+                  height="30"
+                />
+
+                <img
+                  src="./img/logo-twitter.svg"
+                  alt="twitter-icon"
+                  width="30"
+                  height="30"
+                />
+              </div> -->
+
+              <div class="c-card__content">
+                <p class="c-name">David Laid</p>
+                <p class="c-title">Cardio Expert</p>
+              </div>
+            </div>
+
+            <div class="c-card">
+              <img
+                src="https://i.pinimg.com/736x/2a/44/a2/2a44a27fb2c92b35c25449149cf62906.jpg"
+                alt="coache three"
+                class="c-card__img"
+                width="550"
+                height="550"
+              />
+              <!-- <div class="overlay">
+                <img
+                  src="./img/logo-whatsapp.svg"
+                  alt="whatsapp-icon"
+                  width="30"
+                  height="30"
+                />
+
+                <img
+                  src="./img/logo-facebook.svg"
+                  alt="facebook-icon"
+                  width="30"
+                  height="30"
+                />
+
+                <img
+                  src="./img/logo-instagram.svg"
+                  alt="instagram-icon"
+                  width="30"
+                  height="30"
+                />
+
+                <img
+                  src="./img/logo-twitter.svg"
+                  alt="twitter-icon"
+                  width="30"
+                  height="30"
+                />
+              </div> -->
+
+              <div class="c-card__content">
+                <p class="c-name">Sam Suluk</p>
+                <p class="c-title">Fitness Coach</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION REVIEW -->
+      <section class="section-review" id="review">
+        <div class="review-box container" data-aos="fade-up">
+          <h2 class="heading heading--2 underline margin-bottom grid-center">
+            what people say
+          </h2>
+
+          <div class="review-card">
+            <img
+              src="https://imgs.search.brave.com/S97_kkHydMT22zKNXygQKfvNaGWhPrPTFsCLKMxyeLk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zcG9y/dHNjb3ZlcmluZy5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjEvMDYvamVmZl9u/aXBwYXJkLmpwZw"
+              alt="user"
+              class="review-card__image"
+              width="100"
+              height="100"
+            />
+            <blockquote class="review-card__content">
+              <p class="text">
+                "Fitness isn’t just about looking good, it’s about feeling good and being strong in the body you’re in."
+              </p>
+
+              <div class="name">Jeff Nippard</div>
+            </blockquote>
+          </div>
+
+          <div class="review-card">
+            <img
+              src="https://imgs.search.brave.com/SONoPMnNe0iMgJjPdKz3MA6P3cpSJtFe4blcof1EP1s/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuZ3ItYXNzZXRz/LmNvbS9hdXRob3Jz/LzE0Mjc0ODc3MTVw/NS82NDQxNDU2Lmpw/Zw"
+              alt="user"
+              class="review-card__image"
+              width="100"
+              height="100"
+            />
+            <blockquote class="review-card__content">
+              <p class="text">
+                "The best fat loss plan is the one you can stick to long-term, not the one that gives you the quickest results."
+              </p>
+              <div class="name">Mathilde Langevin</div>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+    
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="section-footer" id="footer">
+      <div class="footer-box container">
+        <div class="contact-details">
+          <h2 class="margin-bottom"><span class="yellow">Seven</span>Fitness</h2>
+
+          <ul class="contact-data">
+            <li class="location">VIT CHENNAI</li>
+            <li class="phone">+91 6383703764</li>
+            <li class="email">dineshkumar.j.b2005@gmail.com</li>
+            <li class="social">
+              <img
+                src="./img/logo-whatsapp.svg"
+                alt="whatsapp icon"
+                width="35"
+                height="35"
+              />
+
+              <img
+                src="./img/logo-facebook.svg"
+                alt="facebook icon"
+                width="35"
+                height="35"
+              />
+
+              <img
+                src="./img/logo-instagram.svg"
+                alt="instagram icon"
+                width="35"
+                height="35"
+              />
+
+              <img
+                src="./img/logo-twitter.svg"
+                alt="twitter icon"
+                width="35"
+                height="35"
+              />
+            </li>
+          </ul>
+        </div>
+
+        <nav class="footer-nav" aria-label="navigation">
+          <div class="nav-name">Quick Links</div>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="./about-us.html">About</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#trainers">Trainers</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="FeedBack">
+          <div class="newsletter__title">FeedBack</div>
+          <div class="newsletter__text">
+           Mail To dineshkumar.j.b2005@gmail
+          </div>
+
+        </div>
+
+        <div class="legel">
+          <p class="text">Copyright &copy; by Dinesh Kumar JB&nbsp;</p>
+          <a href="https://github.com/Dineshkumar-jb">
+            <img
+              src="img/github.svg"
+              alt="github"
+              class="github"
+              width="35"
+              height="35"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
+ 
+    </script>
+    
+    <script src="./index.js"></script>
+
+  </body>
+</html>

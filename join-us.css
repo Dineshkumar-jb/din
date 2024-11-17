@@ -1,0 +1,17 @@
+
+section:nth-child(odd){
+  
+  background-size: cover;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.3),
+    rgba(254, 239, 27, 0.1)
+  ),url("https://wallpapers.com/images/featured/gym-background-2n2a165exmwmenur.jpg") !important;
+}
+
+
+.form__input{
+  color: rgb(255, 248, 38);
+  border-color: black;
+}

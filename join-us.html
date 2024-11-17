@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="stylesheet" href="fonts/stylesheet.css" media="screen" />
+    <link rel="stylesheet" href="css/style.css" media="screen" />
+    <link rel="stylesheet" href="./join-us.css" media="screen" />
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    
+      <!-- SECTION CONTACT -->
+      <section class="section-contact" id="contact" style="height: 100vh; ">
+        <div class="contact-box" style="display: flex;" >
+          <form class="form-grp" data-aos="fade-up" style="margin-top: 6%; width: 50%;margin-left: auto;margin-right: auto;">
+            <h2 class="heading heading--2 margin-bottom">
+              Get in <span class="yellow">Touch</span>
+            </h2>
+
+            <input type="text" class="form form__input" placeholder="Name" id="name"/>
+            <input type="text" class="form form__input" placeholder="Email" id="email"/>
+            <input type="text" class="form form__input" placeholder="Phone" id="phone"/>
+            <textarea
+              name="message"
+              cols="5"
+              rows="3"
+              class="form form__input"
+              placeholder="Message"
+              id="message"
+            ></textarea>
+            <button class="btn btn__primary form-flex">Send &nbsp;</button>
+          </form>
+        </div>
+      </section>
+    <script type="module">
+        // Firebase configuration (replace with your Firebase config)
+        const firebaseConfig = {
+          apiKey: "AIzaSyB1MGFE23Y6A9w8ws8UbqolhaZik2YgU3U",
+          authDomain: "gym-boys-d79c3.firebaseapp.com",
+          projectId: "gym-boys-d79c3",
+          storageBucket: "gym-boys-d79c3.firebasestorage.app",
+          messagingSenderId: "1097846570962",
+          appId: "1:1097846570962:web:f1977c58e9cae86c9f120b"
+        };
+      
+        // Initialize Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+      
+        // Initialize Firebase App and Firestore
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+      
+        // Get the form elements
+        const form = document.querySelector(".form-grp");
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const phoneInput = document.getElementById("phone");
+        const messageInput = document.getElementById("message");
+      
+        // Handle form submission
+        form.addEventListener("submit", async function (event) {
+          event.preventDefault();  // Prevent form from submitting normally
+      
+          // Get form values
+          const name = nameInput.value.trim();
+          const email = emailInput.value.trim();
+          const phone = phoneInput.value.trim();
+          const message = messageInput.value.trim();
+      
+          // Validate fields
+          if (!name || !email || !phone || !message) {
+            alert("Please fill all the fields.");
+            return;
+          }
+      
+          try {
+            // Add form data to Firestore
+            const docRef = await addDoc(collection(db, "contactMessages"), {
+              name: name,
+              email: email,
+              phone: phone,
+              message: message,
+              timestamp: new Date(),
+            });
+      
+            console.log("Document written with ID: ", docRef.id);
+            alert("Message sent successfully!");
+      
+            // Reset the form
+            form.reset();
+          } catch (error) {
+            console.error("Error adding document: ", error);
+            alert("Error sending message. Please try again.");
+          }
+        });
+      </script>
+    <script src="src/index.js"></script>
+  </body>
+</html>
